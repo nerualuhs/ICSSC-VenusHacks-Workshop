@@ -1,1 +1,0 @@
-# ICSSC-VenusHacks-Workshop
