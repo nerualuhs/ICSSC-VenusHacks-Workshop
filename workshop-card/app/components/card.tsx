@@ -4,7 +4,6 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
-import Image from 'next/image';
 import StarIcon from '@mui/icons-material/Star';
 import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
@@ -12,36 +11,47 @@ import Box from '@mui/material/Box';
 
 export default function BasicCard() {
   return (
-    <Card sx={{ minWidth: 310, minHeight: 470, display: 'flex', flexDirection: 'column'}}>
+    <Card sx={{ minWidth: 320, minHeight: 510, display: 'flex', flexDirection: 'column', padding: 2 }}>
       <CardContent>
-        <Stack spacing={3} alignItems="center">
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-            <IconButton sx={{ p: 0 }}>
-              <StarIcon sx={{ color: '#800080' }} />
+        <Stack spacing="20px">
+        <Box
+          className="flex items-center gap-4">
+            <IconButton 
+              sx={{ p: 0 }}>
+              <StarIcon 
+                color="secondary" />
             </IconButton>
-            <Typography variant="h5" component="div" fontWeight="bold">
-              ZotGuessr
+            <Typography 
+              variant="h1" 
+              component="div" 
+              sx={{ fontSize: 24 }}>
+                ZotGuesser
             </Typography>
           </Box>
         
-        <div className="w-[200px] h-[200px]"> {/* Fixed dimensions */}
-        <Image 
-            width={200}
-            height={200}
-            src="/location.webp" 
-            alt="Square Image" 
-            className="object-cover" 
+        <Box
+          component="img"
+          src="location.png"
+          alt="City"
+          className="h-[256px] w-[256px] border border-gray-500 object-cover"
         />
-        </div>
 
-
-        <TextField id="standard-basic" label="Enter a location" variant="standard" />
+        <TextField 
+          id="location-input"
+          label="Enter a location" 
+          placeholder="Ex. Paris, France" 
+          variant="standard"
+        />
 
         </Stack>
       </CardContent>
       <CardActions sx={{ justifyContent: "flex-end" }}>
-        <Button variant="outlined">Submit</Button>
-
+        <Button 
+          variant="outlined" 
+          color="secondary"
+        >
+          Submit
+        </Button>
       </CardActions>
     </Card>
   );
