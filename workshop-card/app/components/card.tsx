@@ -15,37 +15,26 @@ export default function BasicCard() {
         <Stack spacing="20px">
         <Box
           className="flex items-center gap-4">
-              <StarIcon 
-                color="secondary" />
+              <StarIcon/>
             <Typography 
               variant="h1" 
-              component="div" 
               sx={{ fontSize: 24 }}>
-                ZotGuesser
+                Header Text
             </Typography>
           </Box>
         
         <Box
           component="img"
-          src="location.png"
-          alt="City"
+          src="IloveICSSC.png"
           className="h-[256px] w-[256px] border border-gray-500 object-cover"
         />
 
-        <TextField 
-          id="location-input"
-          label="Enter a location" 
-          placeholder="Ex. Paris, France" 
-          variant="standard"
-        />
+        <TextField/>
 
         </Stack>
       </CardContent>
       <CardActions sx={{ justifyContent: "flex-end" }}>
-        <Button 
-          variant="outlined" 
-          color="secondary"
-        >
+        <Button>
           Submit
         </Button>
       </CardActions>
